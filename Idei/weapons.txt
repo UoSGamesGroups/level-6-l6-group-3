@@ -1,0 +1,31 @@
+1H sword_1 - fast attack speed in a very small range
+2H Hammer - slow attack speed, makes you static for x amount of time when attacking. Smash the ground with force
+2H Scythe - hold left mouse button and it will spin at the cursor position dmging/second everything in it's path
+2H Sword - arc slash that hits multiple targets
+1H Sword_2 - sword falls from sky and deals dmg to enemies struck 
+
+
+1H Sword
+ -crit chance x ammount
+ -crit dmg x ammount
+ -y bleed dmg for x amount of time
+
+2H Hammer
+ -higher raw dmg and lower recovery time
+ -enemies are hit with such force that are fixed in the ground for x amount of time
+ -every time you hit the ground, spikes emerge from the ground in a large area around the hit area
+
+2H Scythe 
+ -spin now slows enemies
+ -higher damage per second and highter dmg radius
+ -life steal per hit x%dmg 
+
+2H Sword
+ -faster attack speed animation
+ -pushback enemies for x distance
+ -everytime you attack, an arc of energy is cast from the sword. The arc travels for an x amount before fading.
+
+1H Sword_sky
+ -lower cooldown between attacks
+ -attack drags enemies towards the sword
+ -enemies within a certain distance get dmged/second for x amount

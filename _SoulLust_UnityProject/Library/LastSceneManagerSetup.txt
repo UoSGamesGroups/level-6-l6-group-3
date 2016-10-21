@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/_Scenes/Intro/Intro_1_TextStory.unity
+  isLoaded: 1
+  isActive: 1

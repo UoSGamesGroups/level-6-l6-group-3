@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 1d6ade0cdfc7c4b4295ea98a4d1da952
+timeCreated: 1468541678
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: barrel
+    100002: bucket
+    100004: chair
+    100006: crate_1
+    100008: decorative_shield
+    100010: end_tile
+    100012: i_tile_01
+    100014: i_tile_02
+    100016: l_tile_01
+    100018: l_tile_02
+    100020: metal_working_bench
+    100022: mirror_frame_without_glass
+    100024: Object001
+    100026: small_open_barrel
+    100028: t_tile_01
+    100030: table_with_candels
+    100032: //RootNode
+    100034: tombstone
+    100036: top_tile
+    100038: x_tile_01
+    100040: x_tile_02
+    400000: barrel
+    400002: bucket
+    400004: chair
+    400006: crate_1
+    400008: decorative_shield
+    400010: end_tile
+    400012: i_tile_01
+    400014: i_tile_02
+    400016: l_tile_01
+    400018: l_tile_02
+    400020: metal_working_bench
+    400022: mirror_frame_without_glass
+    400024: Object001
+    400026: small_open_barrel
+    400028: t_tile_01
+    400030: table_with_candels
+    400032: //RootNode
+    400034: tombstone
+    400036: top_tile
+    400038: x_tile_01
+    400040: x_tile_02
+    2300000: barrel
+    2300002: bucket
+    2300004: chair
+    2300006: crate_1
+    2300008: decorative_shield
+    2300010: end_tile
+    2300012: i_tile_01
+    2300014: i_tile_02
+    2300016: l_tile_01
+    2300018: l_tile_02
+    2300020: metal_working_bench
+    2300022: mirror_frame_without_glass
+    2300024: Object001
+    2300026: small_open_barrel
+    2300028: t_tile_01
+    2300030: table_with_candels
+    2300032: tombstone
+    2300034: top_tile
+    2300036: x_tile_01
+    2300038: x_tile_02
+    3300000: barrel
+    3300002: bucket
+    3300004: chair
+    3300006: crate_1
+    3300008: decorative_shield
+    3300010: end_tile
+    3300012: i_tile_01
+    3300014: i_tile_02
+    3300016: l_tile_01
+    3300018: l_tile_02
+    3300020: metal_working_bench
+    3300022: mirror_frame_without_glass
+    3300024: Object001
+    3300026: small_open_barrel
+    3300028: t_tile_01
+    3300030: table_with_candels
+    3300032: tombstone
+    3300034: top_tile
+    3300036: x_tile_01
+    3300038: x_tile_02
+    4300000: x_tile_02
+    4300002: x_tile_01
+    4300004: l_tile_01
+    4300006: l_tile_02
+    4300008: t_tile_01
+    4300010: top_tile
+    4300012: i_tile_01
+    4300014: i_tile_02
+    4300016: end_tile
+    4300018: barrel
+    4300020: metal_working_bench
+    4300022: chair
+    4300024: decorative_shield
+    4300026: small_open_barrel
+    4300028: bucket
+    4300030: table_with_candels
+    4300032: tombstone
+    4300034: crate_1
+    4300036: mirror_frame_without_glass
+    4300038: Object001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
