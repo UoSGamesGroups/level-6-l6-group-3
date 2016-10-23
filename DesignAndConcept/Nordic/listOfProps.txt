@@ -4,7 +4,7 @@ Traps:
 -ram from side wall
 -spit fire from the wall
 
-Puzzle_1: son and moon
+Puzzle_1: sun and moon
 
 
 
