@@ -25,6 +25,11 @@ public class openGateOnTrigger : MonoBehaviour {
         }
     }
 
+    void OnTriggerExit()
+    {
+        this.enabled = false;
+    }
+
     void Update()
     {
         if (activateShake)
