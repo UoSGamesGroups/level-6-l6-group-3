@@ -8,7 +8,7 @@ public class openGateOnTrigger : MonoBehaviour {
     [SerializeField] Animator anim;
     [SerializeField]private float endTime;
     private float currentTime;
-    private bool activateShake;
+    public bool activateShake;
 
 
     void Awake()
@@ -20,7 +20,7 @@ public class openGateOnTrigger : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            anim.SetTrigger("open");
+            
             activateShake = true;
         }
     }
@@ -34,6 +34,7 @@ public class openGateOnTrigger : MonoBehaviour {
     {
         if (activateShake)
         {
+            anim.SetTrigger("open");
             _camera.SetTrigger("shake");
             currentTime += Time.deltaTime;
         }
@@ -42,6 +43,7 @@ public class openGateOnTrigger : MonoBehaviour {
         {
             currentTime = 0f;
             activateShake = false;
+            this.enabled = false;
         }
     }
 }

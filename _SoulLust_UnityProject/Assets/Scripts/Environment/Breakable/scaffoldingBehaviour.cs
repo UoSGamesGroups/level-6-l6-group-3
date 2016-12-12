@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class scaffoldingBehaviour : MonoBehaviour {
 
-    [SerializeField] Rigidbody[] rigid;
+    Rigidbody[] rigid;
     bool isBroken = false;
-
-
-    //void Update()
-    //{
-    //    foreach (Rigidbody r in rigid)
-    //    {
-    //        if (r.velocity == Vector3.zero && isBroken)
-    //        {
-    //            r.isKinematic = true;
-    //        }
-    //    }
-    //}
-
+    
+    void Awake()
+    {
+        rigid = GetComponentsInChildren<Rigidbody>();
+    }
+    
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "weapon")
@@ -26,7 +19,6 @@ public class scaffoldingBehaviour : MonoBehaviour {
             foreach (Rigidbody r in rigid)
             {
                 r.isKinematic = false;
-               // isBroken = true;
             }
         }
     }

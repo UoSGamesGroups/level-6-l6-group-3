@@ -23,7 +23,7 @@ public class enemyMovement : MonoBehaviour {
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemy_ms);
     }

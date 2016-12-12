@@ -1,0 +1,130 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class gatingBehaviour : MonoBehaviour {
+
+    [SerializeField] private GameObject target;
+    [SerializeField] private GameObject[] spawnPosition;
+    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private Animator[] gatesAnim;
+    [SerializeField] private int numberOfCreeps;
+
+
+    private float currentTime=0f;
+    private float endTime = 0.5f;
+
+    private GameObject gui;
+    private int i; //spawner order
+    private GameObject _camera;
+    private bool isCameraActivated;
+    private Quaternion targetRotation;
+    private bool isSpawnCreeps;
+
+    void Awake()
+    {
+        gui = GameObject.FindGameObjectWithTag("gui");
+        _camera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
+
+    void Start()
+    {
+        targetRotation = target.transform.rotation;
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isCameraActivated = true;
+           
+        }
+
+
+    }
+
+
+    void Update()
+    {
+        if (isCameraActivated)
+        {
+            _camera.transform.position = Vector3.Lerp(_camera.transform.position, target.transform.position, Time.deltaTime * 2);
+            _camera.GetComponent<Animator>().enabled = false;
+            _camera.transform.rotation = Quaternion.Lerp(_camera.transform.rotation, target.transform.rotation, Time.deltaTime * 1f);
+
+            StartCoroutine(ActivateSpawners());
+        }
+
+        //if (isSpawnCreeps)
+        //    SpawnCreeps();
+        
+    }
+
+
+
+    IEnumerator ActivateSpawners()
+    {
+        gui.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
+
+        
+        foreach (Animator a in gatesAnim)
+            a.SetBool("close", true);
+
+        yield return new WaitForSeconds(1.5f);
+        gui.gameObject.SetActive(true);
+        isCameraActivated = false;
+        _camera.transform.position = Vector3.zero;
+        _camera.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        _camera.GetComponent<Animator>().enabled = true;
+        GetComponent<BoxCollider>().enabled = false;
+
+        StartCoroutine(SpawnCreeps());
+
+       // isSpawnCreeps = true;
+    }
+
+
+    IEnumerator SpawnCreeps()
+    {
+        while (i<enemies.Length)
+        {
+            enemies[i].gameObject.SetActive(true);
+            i++;
+            yield return new WaitForSeconds(3f);
+        }
+
+        StartCoroutine(CountCreeps());
+
+
+
+    }
+
+    IEnumerator CountCreeps()
+    {
+        while (enemies.Length > 0)
+        {
+            enemies = GameObject.FindGameObjectsWithTag("enemy");
+            yield return new WaitForSeconds(1f);
+        }
+
+
+        if (enemies.Length == 0)
+        {
+            foreach (Animator a in gatesAnim)
+                a.SetBool("close", false);
+            GameObject.FindGameObjectWithTag("lock").GetComponent<Animator>().enabled=true;
+            GameObject.FindGameObjectWithTag("lock").GetComponent<SpriteRenderer>().enabled=true;
+        }
+    }
+
+
+
+
+
+
+
+
+}

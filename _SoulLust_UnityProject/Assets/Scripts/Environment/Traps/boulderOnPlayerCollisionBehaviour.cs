@@ -9,10 +9,10 @@ public class boulderOnPlayerCollisionBehaviour : MonoBehaviour {
     
     void Update()
     {
-        if (transform.position.y < -10f)
-        {
-            transform.position = new Vector3()
-        }
+        //if (transform.position.y < -10f)
+        //{
+        //    transform.position = new Vector3()
+        //}
     }
 
 
