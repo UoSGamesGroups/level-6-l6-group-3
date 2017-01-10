@@ -10,7 +10,8 @@ public class gatingBehaviour : MonoBehaviour {
     [SerializeField] private Animator[] gatesAnim;
     [SerializeField] private int numberOfCreeps;
 
-
+	private playerMovement _playerMovement;
+	
     private float currentTime=0f;
     private float endTime = 0.5f;
 
@@ -25,6 +26,7 @@ public class gatingBehaviour : MonoBehaviour {
     {
         gui = GameObject.FindGameObjectWithTag("gui");
         _camera = GameObject.FindGameObjectWithTag("MainCamera");
+		_playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
     }
 
     void Start()
@@ -53,7 +55,7 @@ public class gatingBehaviour : MonoBehaviour {
             _camera.transform.position = Vector3.Lerp(_camera.transform.position, target.transform.position, Time.deltaTime * 2);
             _camera.GetComponent<Animator>().enabled = false;
             _camera.transform.rotation = Quaternion.Lerp(_camera.transform.rotation, target.transform.rotation, Time.deltaTime * 1f);
-
+			_playerMovement.enabled = false;
             StartCoroutine(ActivateSpawners());
         }
 
@@ -80,7 +82,8 @@ public class gatingBehaviour : MonoBehaviour {
         _camera.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         _camera.GetComponent<Animator>().enabled = true;
         GetComponent<BoxCollider>().enabled = false;
-
+		_playerMovement.enabled = true;
+		
         StartCoroutine(SpawnCreeps());
 
        // isSpawnCreeps = true;

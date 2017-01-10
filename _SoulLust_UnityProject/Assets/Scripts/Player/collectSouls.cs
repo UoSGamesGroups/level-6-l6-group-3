@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class collectSouls : MonoBehaviour {
 
-
+	public static float soulsCurrency;
+	[SerializeField] Text soulsCurrencyText;
+	
     GameObject[] souls;
     playerSts _playerSts;
+	
 
 
     private void Awake()
@@ -26,6 +30,8 @@ public class collectSouls : MonoBehaviour {
 
     void Update()
     {
+		soulsCurrencyText.text = "Souls: " + soulsCurrency.ToString("N0");
+		
         foreach (GameObject s in souls)
         {
             if (Vector3.Distance(transform.position, s.transform.position) < 2)
@@ -33,6 +39,7 @@ public class collectSouls : MonoBehaviour {
                 _playerSts.current_player_hp += 5f;
                 s.transform.position = new Vector3(99f, 99f, 99f);
                 s.gameObject.SetActive(false);
+				soulsCurrency += 1;
             }
         }
     }

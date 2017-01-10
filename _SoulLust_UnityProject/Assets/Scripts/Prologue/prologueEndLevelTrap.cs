@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManager;
 
 public class prologueEndLevelTrap : MonoBehaviour {
 
+	[SerializeField] string sceneName;
 	[SerializeField] private pngFadeIn _pngFadeIn;
 	[SerializeField] Animator _cageAnim;
 	[SerializeField] Animator _spikeAnim;
@@ -42,6 +44,10 @@ public class prologueEndLevelTrap : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = false;
         _camera.enabled = false;
         _pngFadeIn.gameObject.SetActive( true);
+		
+		yield return new WaitForSeconds(1);
+		
+		SceneManager.LoadScene(sceneName);
     }
     
 
