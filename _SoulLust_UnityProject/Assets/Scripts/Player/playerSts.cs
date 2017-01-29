@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManager;
+using UnityEngine.SceneManagement;
 
 public class playerSts : MonoBehaviour {
 
@@ -33,6 +33,7 @@ public class playerSts : MonoBehaviour {
     {
         HpDecreas();
         GUI();
+        Dead();
     }
 
     void HpDecreas()
@@ -52,7 +53,7 @@ public class playerSts : MonoBehaviour {
 			}
 			
 			GetComponent<CapsuleCollider>().enabled = true;
-			GetComponent<RigidBody>().constraints=null;
+			GetComponent<Rigidbody>().constraints=0;
 			_pngFadeIn.gameObject.SetActive(true);
 			StartCoroutine(ChangeScene());
 		}
@@ -60,13 +61,16 @@ public class playerSts : MonoBehaviour {
 	
     void GUI()
     {
-        mcHpBar.transform.localScale = new Vector3(current_player_hp / max_player_hp, 1f, 1f);
-        mcHpText.text = current_player_hp.ToString("N1") +"/"+max_player_hp.ToString("N1");
+        if(mcHpBar!=null)
+            mcHpBar.transform.localScale = new Vector3(current_player_hp / max_player_hp, 1f, 1f);
+        if(mcHpText!=null)
+            mcHpText.text = current_player_hp.ToString("N1") + "/" + max_player_hp.ToString("N1");
+
     }
 	
 	IEnumerator ChangeScene()
 	{
-		yield return new WaitForSeconds(1.5f)
+		yield return new WaitForSeconds(3.5f);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 

@@ -36,6 +36,8 @@ public class playerMovement : MonoBehaviour {
 
     void Awake()
     {
+        Cursor.visible = false;
+
         rigid = GetComponent<Rigidbody>();
         layer_mask = LayerMask.GetMask("floor");
     }

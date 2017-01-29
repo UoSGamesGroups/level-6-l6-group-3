@@ -11,7 +11,7 @@ public class enemymeleeAttack : MonoBehaviour {
 	playerSts _playerSts;
 	
 	//attack
-	[SerializeField] float dmg
+	[SerializeField] float dmg;
 	float currentAttackTime;
 	float endAttackTime=1.4f;
 	
@@ -35,7 +35,7 @@ public class enemymeleeAttack : MonoBehaviour {
 			
 			if(currentAttackTime == endAttackTime/2)
 			{
-				print("now attack animation")
+				print("now attack animation");
 			}
 			
 			if(currentAttackTime >=endAttackTime)

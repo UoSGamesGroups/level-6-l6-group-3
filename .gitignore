@@ -26,3 +26,14 @@ ExportedObj/
 sysinfo.txt
 
 Builds/**
+Presentations/**
+Media/**
+_SoulLust_UnityProject/*.csproj
+
+_SoulLust_UnityProject/obj/**
+
+_SoulLust_UnityProject/Library/**
+
+_SoulLust_UnityProject/.vscode
+_SoulLust_UnityProject/*.sln
+_SoulLust_UnityProject/*.htm
