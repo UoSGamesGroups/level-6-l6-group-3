@@ -15,13 +15,13 @@ public class playerSts : MonoBehaviour {
     //GUI
 	[SerializeField] private pngFadeIn _pngFadeIn;
     private GameObject mcHpBar;
-    private TextMesh mcHpText;
+    private GameObject mcHpText;
 
 
     private void Awake()
     {
         mcHpBar = GameObject.FindGameObjectWithTag("mcHp");
-        mcHpText= GameObject.FindGameObjectWithTag("mcHpText").GetComponent<TextMesh>();
+        mcHpText= GameObject.FindGameObjectWithTag("mcHpText");
     }
 
     void Start()
@@ -64,7 +64,7 @@ public class playerSts : MonoBehaviour {
         if(mcHpBar!=null)
             mcHpBar.transform.localScale = new Vector3(current_player_hp / max_player_hp, 1f, 1f);
         if(mcHpText!=null)
-            mcHpText.text = current_player_hp.ToString("N1") + "/" + max_player_hp.ToString("N1");
+            mcHpText.GetComponent<TextMesh>().text = current_player_hp.ToString("N1") + "/" + max_player_hp.ToString("N1");
 
     }
 	
