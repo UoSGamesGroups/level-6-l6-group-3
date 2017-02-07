@@ -8,7 +8,8 @@ public class cameraFollowsPlayer : MonoBehaviour {
     [SerializeField]
     private float z;
 
-    private GameObject player;
+    GameObject player;
+    Vector3 target;
 
 
 
@@ -21,7 +22,8 @@ public class cameraFollowsPlayer : MonoBehaviour {
     {
         if (player != null)
         {
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y + y, player.transform.position.z + z);
+            target = new Vector3(player.transform.position.x, player.transform.position.y + y, player.transform.position.z + z);
+            transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime * 3f);
         }
     }
 }

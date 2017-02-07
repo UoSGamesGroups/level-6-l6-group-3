@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class prologueEndLevelTrap : MonoBehaviour {
 
 	[SerializeField] string sceneName;
-	[SerializeField] private pngFadeIn _pngFadeIn;
+	[SerializeField] private GameObject imgFadeIn;
 	[SerializeField] Animator _cageAnim;
 	[SerializeField] Animator _spikeAnim;
 
@@ -43,7 +43,7 @@ public class prologueEndLevelTrap : MonoBehaviour {
 
         GetComponent<Rigidbody>().isKinematic = false;
         _camera.enabled = false;
-        _pngFadeIn.gameObject.SetActive( true);
+        imgFadeIn.gameObject.SetActive( true);
 		
 		yield return new WaitForSeconds(3);
 		
