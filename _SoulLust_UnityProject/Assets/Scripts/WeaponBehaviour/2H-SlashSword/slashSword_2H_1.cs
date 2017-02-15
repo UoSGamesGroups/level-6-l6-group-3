@@ -32,10 +32,11 @@ public class slashSword_2H_1 : MonoBehaviour {
     private bool onCooldown = false;
     private GameObject[] enemies;
     private GameObject player;
-
+    BonusController bonus;
 
     void Awake()
     {
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
         enemies = GameObject.FindGameObjectsWithTag("enemy");
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
@@ -54,7 +55,7 @@ public class slashSword_2H_1 : MonoBehaviour {
         {
             if (col.gameObject == enemy)
             {
-                enemy.GetComponent<enemySts>().enemy_hp -= dmg;
+                enemy.GetComponent<enemySts>().enemy_hp -= dmg + bonus.BonusDmg;
 
                 if (slashSword_2H_level >= 1)
                 {

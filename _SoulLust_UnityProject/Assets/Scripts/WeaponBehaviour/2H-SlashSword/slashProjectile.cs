@@ -8,12 +8,13 @@ public class slashProjectile : MonoBehaviour {
     [SerializeField] private float dmg;
 
     private GameObject[] enemies;
-
+    BonusController bonus;
 
 
     void Awake()
     {
         enemies = GameObject.FindGameObjectsWithTag("enemy");
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
     }
 
 
@@ -36,7 +37,7 @@ public class slashProjectile : MonoBehaviour {
         {
             if (col.gameObject == enemy)
             {
-                enemy.GetComponent<enemySts>().enemy_hp -= dmg;
+                enemy.GetComponent<enemySts>().enemy_hp -= dmg + bonus.BonusDmg;
                 print("sad");
             }
         }

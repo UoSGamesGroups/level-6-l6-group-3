@@ -33,12 +33,13 @@ public class hammer_2H : MonoBehaviour {
     private GameObject player;
 
     private float current_cooldown = 0;
+    BonusController bonus;
     
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>(); 
         spikePos = GameObject.FindGameObjectWithTag("spikePos");
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -69,7 +70,7 @@ public class hammer_2H : MonoBehaviour {
         {
             if (col.gameObject == enemy)
             {
-                enemy.GetComponent<enemySts>().enemy_hp -= dmg;
+                enemy.GetComponent<enemySts>().enemy_hp -= dmg +bonus.BonusDmg;
 
 
                 //level 2 - root
@@ -121,7 +122,7 @@ public class hammer_2H : MonoBehaviour {
     {
         if (hammer_level >= 1)
         {
-            dmg = improved_dmg;
+            dmg = improved_dmg+bonus.BonusDmg;
             max_cooldown = 1.2f;
             anim.speed = 1.5f;
         }

@@ -7,11 +7,16 @@ public class skySword_projectile : MonoBehaviour {
 
     private int skySword_level;
     private GameObject[] enemies;
+    BonusController bonus;
 
     [SerializeField] float dot;
     [SerializeField] float dmg;
 
 
+    void Awake()
+    {
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
+    }
 
    void Start()
     {
@@ -33,7 +38,7 @@ public class skySword_projectile : MonoBehaviour {
         {
             if (col.gameObject == enemy)
             {
-                enemy.GetComponent<enemySts>().enemy_hp -= dmg;
+                enemy.GetComponent<enemySts>().enemy_hp -= dmg  + bonus.BonusDmg;
             }
         }
     }

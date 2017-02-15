@@ -22,15 +22,15 @@ public class Sword_1H_1 : MonoBehaviour {
 	[SerializeField] private float crit_damage;
 	
 
-
+	BonusController bonus;
 	private float current_cooldown= 0;
 	
 	private bool onCooldown = false;
 
 
-
 	void Awake()
 	{
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
 		anim = GetComponent<Animator>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
 	}
@@ -86,7 +86,7 @@ public class Sword_1H_1 : MonoBehaviour {
                 switch (sword_1h_level)
 				{
 					case 0:
-						enemy.GetComponent<enemySts>().enemy_hp -= sword_1h_dmg;
+						enemy.GetComponent<enemySts>().enemy_hp -= sword_1h_dmg + bonus.BonusDmg;
 						break;
 					case 1:
 						enemy.GetComponent<enemySts>().enemy_hp -= Level_1_CritChance();
@@ -116,12 +116,12 @@ public class Sword_1H_1 : MonoBehaviour {
 
 		if (cc_value <= crit_chance)
 		{
-			dmgWithCrit = sword_1h_dmg * 2.0f;
+			dmgWithCrit = (sword_1h_dmg+ bonus.BonusDmg) * 2.0f;
 			print("isCrit");
 		}
 		else if (cc_value > crit_chance)
 		{
-			dmgWithCrit = sword_1h_dmg;
+			dmgWithCrit = sword_1h_dmg+ bonus.BonusDmg;
 		}
 		return dmgWithCrit;
 	}
@@ -134,12 +134,12 @@ public class Sword_1H_1 : MonoBehaviour {
 
 		if (cc_value <= crit_chance)
 		{
-			dmgWithCrit = sword_1h_dmg * crit_damage;
+			dmgWithCrit =(sword_1h_dmg+ bonus.BonusDmg) * crit_damage;
 			print("isCrit + Cd");
 		}
 		else if (cc_value > crit_chance)
 		{
-			dmgWithCrit = sword_1h_dmg;
+			dmgWithCrit = sword_1h_dmg+ bonus.BonusDmg;
 		}
 		return dmgWithCrit;
 	}
