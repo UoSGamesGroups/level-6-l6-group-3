@@ -34,10 +34,15 @@ public class playerMovement : MonoBehaviour {
     //Gravity power
     [SerializeField] private float gravity_power = 5220f;
 
+    //bonus
+    BonusController bonus;
+
+
     void Awake()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
 
+        bonus = GetComponent<BonusController>();
         rigid = GetComponent<Rigidbody>();
         layer_mask = LayerMask.GetMask("floor");
     }
@@ -51,6 +56,15 @@ public class playerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if(bonus != null)
+        {
+            if(bonus.BonusMs >0f)
+            {
+                player_ms += bonus.BonusMs;
+                bonus.BonusMs = 0f;
+            }
+        }
+
         //Movement();
         Movement_2();
     }

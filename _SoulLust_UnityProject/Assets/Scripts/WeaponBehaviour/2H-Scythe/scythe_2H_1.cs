@@ -27,10 +27,11 @@ public class scythe_2H_1 : MonoBehaviour {
     private MeshCollider _collider;
     private GameObject[] enemies;
     private GameObject player;
-    
+    BonusController bonus;
 
     void Awake()
     {
+        bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
         layer_mask = LayerMask.GetMask("floor");
         _collider = GetComponent<MeshCollider>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -111,11 +112,11 @@ public class scythe_2H_1 : MonoBehaviour {
                 switch (scythe_2h_level)
                 {
                     case 0:
-                        enemy.GetComponent<enemySts>().enemy_hp -= scythe_dmg * Time.deltaTime;
+                        enemy.GetComponent<enemySts>().enemy_hp -= (scythe_dmg+bonus.BonusDmg) * Time.deltaTime;
                         break;
 
                     case 1:
-                        enemy.GetComponent<enemySts>().enemy_hp -= scythe_dmg * Time.deltaTime;
+                        enemy.GetComponent<enemySts>().enemy_hp -= (scythe_dmg +bonus.BonusDmg)* Time.deltaTime;
                         enemy.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
                         break;
 

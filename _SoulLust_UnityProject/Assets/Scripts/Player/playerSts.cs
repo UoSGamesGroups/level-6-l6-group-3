@@ -17,11 +17,15 @@ public class playerSts : MonoBehaviour {
     private GameObject mcHpBar;
     private GameObject mcHpText;
 
+    //Bonuses
+    BonusController bonus;
+
 
     private void Awake()
     {
         mcHpBar = GameObject.FindGameObjectWithTag("mcHp");
         mcHpText= GameObject.FindGameObjectWithTag("mcHpText");
+        bonus = GetComponent<BonusController>();
     }
 
     void Start()
@@ -31,6 +35,14 @@ public class playerSts : MonoBehaviour {
 
     void Update()
     {
+        if(bonus != null)
+        {
+            if(bonus.BonusHp > 0f)
+            {
+                max_player_hp = max_player_hp + bonus.BonusHp;
+                bonus.BonusHp =0f;
+            }
+        }
         HpDecreas();
         GUI();
         Dead();
@@ -38,7 +50,8 @@ public class playerSts : MonoBehaviour {
 
     void HpDecreas()
     {
-        current_player_hp -= Time.deltaTime * hunger;
+        if(bonus != null)
+            current_player_hp -= Time.deltaTime * (hunger + bonus.BonusLwrHealthDrop);
         current_player_hp = Mathf.Clamp(current_player_hp, 0, max_player_hp);
     }
 
