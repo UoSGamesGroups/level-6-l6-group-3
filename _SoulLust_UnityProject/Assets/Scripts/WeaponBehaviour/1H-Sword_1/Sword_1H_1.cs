@@ -8,7 +8,7 @@ public class Sword_1H_1 : MonoBehaviour {
 
 
 	private GameObject[] enemies;
-	private Animator anim;
+	[SerializeField] Animator anim;
 	private Animator _camera;
 	
 	[Header("Primary Sts")]
@@ -31,8 +31,8 @@ public class Sword_1H_1 : MonoBehaviour {
 	void Awake()
 	{
         bonus = GameObject.FindGameObjectWithTag("Player").GetComponent<BonusController>();
-		anim = GetComponent<Animator>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+		//_col = GetComponent<MeshCollider>();
 	}
 
 	IEnumerator Start()
@@ -51,13 +51,14 @@ public class Sword_1H_1 : MonoBehaviour {
 	}
 
 
+
 	void Attack_1()
 	{
 		if (!onCooldown)
 		{
 			if (Input.GetKeyDown(KeyCode.Mouse0))
 			{
-				anim.SetTrigger("attack_1");
+				anim.SetTrigger("attack");
 				onCooldown = true;
 			}
 		}

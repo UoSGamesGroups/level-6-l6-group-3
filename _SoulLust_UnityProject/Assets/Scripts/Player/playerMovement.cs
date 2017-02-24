@@ -15,7 +15,9 @@ public class playerMovement : MonoBehaviour {
     private Rigidbody rigid;
     [SerializeField]
     private float player_ms = 300f;
-    private Vector3 direction;
+    private Vector3 direction;	
+    [SerializeField] Animator anim;
+
 
 
     //Raycasting
@@ -131,14 +133,15 @@ public class playerMovement : MonoBehaviour {
             direction = direction.normalized;
         }
 
+        if(h != 0 || v != 0)
+            anim.SetBool("move", true);
+        else if(h == 0 && v == 0)
+            anim.SetBool("move", false);
+            
+
         rigid.AddForce(direction * player_ms * 100);
         
     }
-
-
-
-
-
 
     void Custom_gravity()
     {

@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: 421594033ca26144d9e9da082daffe44
+timeCreated: 1487925027
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: chest
+    100004: FArm.L
+    100006: FArm.R
+    100008: finger1.L
+    100010: finger1.R
+    100012: 'finger2.L:'
+    100014: finger2.L:.002
+    100016: finger2.L:.002_end
+    100018: finger2.L:_end
+    100020: head
+    100022: head_end
+    100024: ikArm.L
+    100026: ikArm.L_end
+    100028: ikArm.R
+    100030: ikArm.R_end
+    100032: legs
+    100034: MC_mesh
+    100036: //RootNode
+    100038: neck
+    100040: palm.L
+    100042: palm.R
+    100044: shoulder.L
+    100046: shoulder.R
+    100048: stomach
+    100050: thumb1.L
+    100052: thumb1.R
+    100054: thumb2.L
+    100056: thumb2.L_end
+    100058: thumb2.R
+    100060: thumb2.R_end
+    100062: UArm.L
+    100064: UArm.R
+    400000: Armature
+    400002: chest
+    400004: FArm.L
+    400006: FArm.R
+    400008: finger1.L
+    400010: finger1.R
+    400012: 'finger2.L:'
+    400014: finger2.L:.002
+    400016: finger2.L:.002_end
+    400018: finger2.L:_end
+    400020: head
+    400022: head_end
+    400024: ikArm.L
+    400026: ikArm.L_end
+    400028: ikArm.R
+    400030: ikArm.R_end
+    400032: legs
+    400034: MC_mesh
+    400036: //RootNode
+    400038: neck
+    400040: palm.L
+    400042: palm.R
+    400044: shoulder.L
+    400046: shoulder.R
+    400048: stomach
+    400050: thumb1.L
+    400052: thumb1.R
+    400054: thumb2.L
+    400056: thumb2.L_end
+    400058: thumb2.R
+    400060: thumb2.R_end
+    400062: UArm.L
+    400064: UArm.R
+    4300000: MC_mesh
+    7400000: Armature|attack1
+    7400002: Armature|attack2
+    7400004: Armature|idle
+    7400006: Armature|move
+    9500000: //RootNode
+    13700000: MC_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|attack1
+      takeName: Armature|attack1
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.08240307
+        functionName: ActivateCollider
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.9209024
+        functionName: ActivateCollider
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ikArm.L
+        weight: 1
+      - path: Armature/ikArm.L/ikArm.L_end
+        weight: 1
+      - path: Armature/ikArm.R
+        weight: 1
+      - path: Armature/ikArm.R/ikArm.R_end
+        weight: 1
+      - path: Armature/legs
+        weight: 1
+      - path: Armature/legs/stomach
+        weight: 1
+      - path: Armature/legs/stomach/chest
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head/head_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L
+        weight: 1
+      - path: 'Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:'
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:/finger2.L:_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L/thumb2.L_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002/finger2.L:.002_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R/thumb2.R_end
+        weight: 1
+      - path: MC_mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|attack2
+      takeName: Armature|attack2
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.065093815
+        functionName: ActivateCollider
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
+      - time: 0.99486226
+        functionName: ActivateCollider
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ikArm.L
+        weight: 1
+      - path: Armature/ikArm.L/ikArm.L_end
+        weight: 1
+      - path: Armature/ikArm.R
+        weight: 1
+      - path: Armature/ikArm.R/ikArm.R_end
+        weight: 1
+      - path: Armature/legs
+        weight: 1
+      - path: Armature/legs/stomach
+        weight: 1
+      - path: Armature/legs/stomach/chest
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head/head_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L
+        weight: 1
+      - path: 'Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:'
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:/finger2.L:_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L/thumb2.L_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002/finger2.L:.002_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R/thumb2.R_end
+        weight: 1
+      - path: MC_mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|idle
+      takeName: Armature|idle
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ikArm.L
+        weight: 1
+      - path: Armature/ikArm.L/ikArm.L_end
+        weight: 1
+      - path: Armature/ikArm.R
+        weight: 1
+      - path: Armature/ikArm.R/ikArm.R_end
+        weight: 1
+      - path: Armature/legs
+        weight: 1
+      - path: Armature/legs/stomach
+        weight: 1
+      - path: Armature/legs/stomach/chest
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head/head_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L
+        weight: 1
+      - path: 'Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:'
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:/finger2.L:_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L/thumb2.L_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002/finger2.L:.002_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R/thumb2.R_end
+        weight: 1
+      - path: MC_mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|move
+      takeName: Armature|move
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/ikArm.L
+        weight: 1
+      - path: Armature/ikArm.L/ikArm.L_end
+        weight: 1
+      - path: Armature/ikArm.R
+        weight: 1
+      - path: Armature/ikArm.R/ikArm.R_end
+        weight: 1
+      - path: Armature/legs
+        weight: 1
+      - path: Armature/legs/stomach
+        weight: 1
+      - path: Armature/legs/stomach/chest
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head
+        weight: 1
+      - path: Armature/legs/stomach/chest/neck/head/head_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L
+        weight: 1
+      - path: 'Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:'
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/finger1.L/finger2.L:/finger2.L:_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.L/UArm.L/FArm.L/palm.L/thumb1.L/thumb2.L/thumb2.L_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/finger1.R/finger2.L:.002/finger2.L:.002_end
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R
+        weight: 1
+      - path: Armature/legs/stomach/chest/shoulder.R/UArm.R/FArm.R/palm.R/thumb1.R/thumb2.R/thumb2.R_end
+        weight: 1
+      - path: MC_mesh
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.9
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

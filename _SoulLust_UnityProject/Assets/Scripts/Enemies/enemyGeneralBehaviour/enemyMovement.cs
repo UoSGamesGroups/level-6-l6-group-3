@@ -31,6 +31,7 @@ public class enemyMovement : MonoBehaviour {
     {
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemy_ms);
         Movement();
+        RotateTowards();
     }
 
     void Movement()
@@ -55,6 +56,14 @@ public class enemyMovement : MonoBehaviour {
                 break;
 
         }
+    }
+
+    void RotateTowards()
+    {
+        Vector3 target = player.transform.position - transform.position;
+        target.y =0;
+        Quaternion dir = Quaternion.LookRotation(target);
+        transform.rotation = Quaternion.Lerp(transform.rotation, dir, Time.deltaTime * 3f);
     }
 
     
