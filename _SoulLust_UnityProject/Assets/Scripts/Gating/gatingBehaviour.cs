@@ -41,10 +41,7 @@ public class gatingBehaviour : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             isCameraActivated = true;
-           
         }
-
-
     }
 
 
@@ -73,7 +70,7 @@ public class gatingBehaviour : MonoBehaviour {
 
         
         foreach (Animator a in gatesAnim)
-            a.SetBool("close", true);
+            a.SetBool("open", false);
 
         yield return new WaitForSeconds(1.5f);
         gui.gameObject.SetActive(true);
@@ -117,7 +114,7 @@ public class gatingBehaviour : MonoBehaviour {
         if (enemies.Length == 0)
         {
             foreach (Animator a in gatesAnim)
-                a.SetBool("close", false);
+                a.SetBool("open", true);
             GameObject.FindGameObjectWithTag("lock").GetComponent<Animator>().enabled=true;
             GameObject.FindGameObjectWithTag("lock").GetComponent<SpriteRenderer>().enabled=true;
         }
