@@ -29,7 +29,7 @@ public class enemyMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if(Vector3.Distance(transform.position, player.transform.position)>8f)
+        if(Vector3.Distance(transform.position, player.transform.position)>2f)
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemy_ms);
         Movement();
         RotateTowards();

@@ -29,7 +29,7 @@ public class enemymeleeAttack : MonoBehaviour {
 	
 	void Attack()
 	{
-		if(Vector3.Distance(transform.position, player.transform.position)<3)
+		if(Vector3.Distance(transform.position, player.transform.position)<4)
 		{
 			currentAttackTime += Time.deltaTime;
 			
@@ -41,6 +41,9 @@ public class enemymeleeAttack : MonoBehaviour {
 			if(currentAttackTime >=endAttackTime)
 			{
 				_playerSts.current_player_hp -= dmg;
+				var a = GameObject.FindGameObjectWithTag("dmgFrame");
+				a.GetComponent<Image>().color = new Color(a.GetComponent<Image>().color.r, a.GetComponent<Image>().color.g, a.GetComponent<Image>().color.b, 0.8f);
+				Debug.Log(a);
 				currentAttackTime =0f;
 			}
 		}

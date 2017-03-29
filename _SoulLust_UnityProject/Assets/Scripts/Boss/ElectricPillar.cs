@@ -17,7 +17,7 @@ public class ElectricPillar : MonoBehaviour {
 		if(isFalling )
 			transform.position += Vector3.up * Time.deltaTime * speed;
 
-			if(Vector3.Distance(transform.position, _playerHp.transform.position)<6)
+			if(Vector3.Distance(transform.position, _playerHp.transform.position)<4)
 			{
 				_playerHp.current_player_hp -= Time.deltaTime * 120f;
 			}
