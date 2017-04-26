@@ -7,7 +7,7 @@ public class collectSouls : MonoBehaviour {
 
 	public static float soulsCurrency;
 	[SerializeField] Text soulsCurrencyText;
-	
+	[SerializeField] ParticleSystem healPart;
     GameObject[] souls;
     playerSts _playerSts;
 	
@@ -36,7 +36,8 @@ public class collectSouls : MonoBehaviour {
         {
             if (Vector3.Distance(transform.position, s.transform.position) < 2)
             {
-                _playerSts.current_player_hp += 10f;
+                healPart.Play();
+                _playerSts.current_player_hp += 3f;
                 s.transform.position = new Vector3(99f, 99f, 99f);
                 s.gameObject.SetActive(false);
 				soulsCurrency += 1;

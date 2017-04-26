@@ -78,33 +78,27 @@ public class Sword_1H_1 : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		foreach (GameObject enemy in enemies)
-		{
-			if (col.gameObject == enemy)
+		if (col.gameObject.tag == "enemy")
 			{
                 _camera.SetTrigger("shake");
 
-                switch (sword_1h_level)
+				switch (sword_1h_level)
 				{
 					case 0:
-						enemy.GetComponent<enemySts>().enemy_hp -= sword_1h_dmg + bonus.BonusDmg;
+						col.gameObject.GetComponent<enemySts>().enemy_hp -= sword_1h_dmg + bonus.BonusDmg;
 						break;
 					case 1:
-						enemy.GetComponent<enemySts>().enemy_hp -= Level_1_CritChance();
+						col.gameObject.GetComponent<enemySts>().enemy_hp -= Level_1_CritChance();
 						break;
 					case 2:
-						enemy.GetComponent<enemySts>().enemy_hp -= Level_2_DmgWithCritDamage();
+						col.gameObject.GetComponent<enemySts>().enemy_hp -= Level_2_DmgWithCritDamage();
 						break;
 					case 3:
-						enemy.GetComponent<enemySts>().enemy_hp -= Level_2_DmgWithCritDamage();
-						enemy.GetComponent<debuffsOnEnemy>().bleedDuration = 5f;
-
-
-
+						col.gameObject.GetComponent<enemySts>().enemy_hp -= Level_2_DmgWithCritDamage();
+						col.gameObject.GetComponent<debuffsOnEnemy>().bleedDuration = 5f;
 						break;
 				}
 			}
-		}
 	}
 
 	

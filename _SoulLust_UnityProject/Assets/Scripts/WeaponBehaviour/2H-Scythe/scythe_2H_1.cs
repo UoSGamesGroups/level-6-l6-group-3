@@ -27,6 +27,7 @@ public class scythe_2H_1 : MonoBehaviour {
     private MeshCollider _collider;
     private GameObject[] enemies;
     private GameObject player;
+    Transform parent;
     BonusController bonus;
 
     void Awake()
@@ -35,6 +36,8 @@ public class scythe_2H_1 : MonoBehaviour {
         layer_mask = LayerMask.GetMask("floor");
         _collider = GetComponent<MeshCollider>();
         player = GameObject.FindGameObjectWithTag("Player");
+
+        parent = transform.parent;
     }
 
     IEnumerator Start()
@@ -74,19 +77,21 @@ public class scythe_2H_1 : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                target_pos_attack = new Vector3(raycast.point.x, 0, raycast.point.z);
+                target_pos_attack = new Vector3(raycast.point.x, 1f, raycast.point.z);
                 transform.position = Vector3.Lerp(transform.position, target_pos_attack, Time.deltaTime * 4f);
 
                 transform.Rotate(rs * Time.deltaTime * -Vector3.forward);
                 _collider.enabled = true;
+                transform.parent = player.transform;
             }
             else
             {
-                target_pos_retreat = new Vector3(-1.5f, -0.13f, -0.52f);
-                target_rotation_retreat = Quaternion.Euler(0f, 0f, -54f);
+                target_pos_retreat = new Vector3(1.8f, -0.39f, 0.94f);
+                target_rotation_retreat = Quaternion.Euler(-70f, 75f, -8f);
                 transform.localPosition = Vector3.Lerp(transform.localPosition, target_pos_retreat, Time.deltaTime * 15f);
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, target_rotation_retreat, Time.deltaTime * 20f);
                 _collider.enabled = false;
+                transform.parent = parent;
             } 
         }
     }
@@ -105,34 +110,31 @@ public class scythe_2H_1 : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        foreach (GameObject enemy in enemies)
-        {
-            if (col.gameObject == enemy)
+        if (col.gameObject.tag == "enemy")
             {
                 switch (scythe_2h_level)
                 {
                     case 0:
-                        enemy.GetComponent<enemySts>().enemy_hp -= (scythe_dmg+bonus.BonusDmg) * Time.deltaTime;
+                        col.gameObject.GetComponent<enemySts>().enemy_hp -= (scythe_dmg+bonus.BonusDmg) * Time.deltaTime;
                         break;
 
                     case 1:
-                        enemy.GetComponent<enemySts>().enemy_hp -= (scythe_dmg +bonus.BonusDmg)* Time.deltaTime;
-                        enemy.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
+                        col.gameObject.GetComponent<enemySts>().enemy_hp -= (scythe_dmg +bonus.BonusDmg)* Time.deltaTime;
+                        col.gameObject.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
                         break;
 
                     case 2:
-                        enemy.GetComponent<enemySts>().enemy_hp -= scyhte_imporved_dmg * Time.deltaTime;
-                        enemy.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
+                        col.gameObject.GetComponent<enemySts>().enemy_hp -= scyhte_imporved_dmg * Time.deltaTime;
+                        col.gameObject.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
                         break;
 
                     case 3:
-                        enemy.GetComponent<enemySts>().enemy_hp -= scyhte_imporved_dmg * Time.deltaTime;
-                        enemy.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
+                        col.gameObject.GetComponent<enemySts>().enemy_hp -= scyhte_imporved_dmg * Time.deltaTime;
+                        col.gameObject.GetComponent<debuffsOnEnemy>().slowDuration = 0.5f;
                         player.GetComponent<playerSts>().current_player_hp += hp_leech * Time.deltaTime;
                         break;
                 }
             }
-        }
     }
 
 

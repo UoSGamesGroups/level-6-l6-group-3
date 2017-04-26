@@ -6,9 +6,12 @@ public class gatingBehaviour : MonoBehaviour {
 
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject[] spawnPosition;
-    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject enemy;
     [SerializeField] private Animator[] gatesAnim;
     [SerializeField] private int numberOfCreeps;
+
+
+    GameObject[] enemyStored;
 
 	private playerMovement _playerMovement;
 	
@@ -22,6 +25,7 @@ public class gatingBehaviour : MonoBehaviour {
     private Quaternion targetRotation;
     private bool isSpawnCreeps;
 
+
     void Awake()
     {
         gui = GameObject.FindGameObjectWithTag("gui");
@@ -32,7 +36,6 @@ public class gatingBehaviour : MonoBehaviour {
     void Start()
     {
         targetRotation = target.transform.rotation;
-
     }
 
 
@@ -55,13 +58,40 @@ public class gatingBehaviour : MonoBehaviour {
 			_playerMovement.enabled = false;
             StartCoroutine(ActivateSpawners());
         }
-
-        //if (isSpawnCreeps)
-        //    SpawnCreeps();
-        
+        if (isSpawnCreeps)
+           UnleashEnemies();  
     }
 
 
+
+    void UnleashEnemies()
+    {
+        if(numberOfCreeps >0)
+        {
+            currentTime += Time.deltaTime;
+
+            if(currentTime >= endTime)
+            {
+                Instantiate(enemy, spawnPosition[Random.Range(0,spawnPosition.Length)].transform.position, transform.rotation);
+                currentTime = 0;
+                numberOfCreeps--;
+            }
+        }
+
+        if(numberOfCreeps == 0)
+        {
+            enemyStored = GameObject.FindGameObjectsWithTag("enemy");
+
+            if(enemyStored.Length == 0)
+            {
+                foreach (Animator a in gatesAnim)
+                    a.SetBool("open", true);
+                GameObject.FindGameObjectWithTag("lock").GetComponent<Animator>().SetTrigger("open");
+                // GameObject.FindGameObjectWithTag("lock").GetComponent<SpriteRenderer>().enabled=true;
+                enabled = false;
+            }
+        }
+    }
 
     IEnumerator ActivateSpawners()
     {
@@ -80,51 +110,38 @@ public class gatingBehaviour : MonoBehaviour {
         _camera.GetComponent<Animator>().enabled = true;
         GetComponent<BoxCollider>().enabled = false;
 		_playerMovement.enabled = true;
-		
-        StartCoroutine(SpawnCreeps());
 
-       // isSpawnCreeps = true;
+        isSpawnCreeps = true;
     }
 
 
-    IEnumerator SpawnCreeps()
-    {
-        while (i<enemies.Length)
-        {
-            enemies[i].gameObject.SetActive(true);
-            i++;
-            yield return new WaitForSeconds(3f);
-        }
+    // IEnumerator SpawnCreeps()
+    // {
+    //     while (i<enemies.Length)
+    //     {
+    //         enemies[i].gameObject.SetActive(true);
+    //         i++;
+    //         yield return new WaitForSeconds(3f);
+    //     }
 
-        StartCoroutine(CountCreeps());
+    //     StartCoroutine(CountCreeps());
+    // }
 
-
-
-    }
-
-    IEnumerator CountCreeps()
-    {
-        while (enemies.Length > 0)
-        {
-            enemies = GameObject.FindGameObjectsWithTag("enemy");
-            yield return new WaitForSeconds(1f);
-        }
+    // IEnumerator CountCreeps()
+    // {
+    //     while (enemies.Length > 0)
+    //     {
+    //         enemies = GameObject.FindGameObjectsWithTag("enemy");
+    //         yield return new WaitForSeconds(1f);
+    //     }
 
 
-        if (enemies.Length == 0)
-        {
-            foreach (Animator a in gatesAnim)
-                a.SetBool("open", true);
-            GameObject.FindGameObjectWithTag("lock").GetComponent<Animator>().enabled=true;
-            GameObject.FindGameObjectWithTag("lock").GetComponent<SpriteRenderer>().enabled=true;
-        }
-    }
-
-
-
-
-
-
-
-
+    //     if (enemies.Length == 0)
+    //     {
+    //         foreach (Animator a in gatesAnim)
+    //             a.SetBool("open", true);
+    //         GameObject.FindGameObjectWithTag("lock").GetComponent<Animator>().enabled=true;
+    //         GameObject.FindGameObjectWithTag("lock").GetComponent<SpriteRenderer>().enabled=true;
+    //     }
+    // }
 }

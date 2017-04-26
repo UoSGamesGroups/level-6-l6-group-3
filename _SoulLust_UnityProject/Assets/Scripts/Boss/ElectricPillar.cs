@@ -10,6 +10,7 @@ public class ElectricPillar : MonoBehaviour {
 	void Awake()
 	{
 		_playerHp = GameObject.FindGameObjectWithTag("Player").GetComponent<playerSts>();
+		Destroy(gameObject, 20);
 	}
 
 	void Update()
