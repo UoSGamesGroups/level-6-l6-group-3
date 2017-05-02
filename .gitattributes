@@ -1,3 +1,1 @@
-Builds/ filter=lfs diff=lfs merge=lfs -text
-Media/ filter=lfs diff=lfs merge=lfs -text
-Presentations/ filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
