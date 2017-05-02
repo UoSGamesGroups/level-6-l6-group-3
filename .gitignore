@@ -26,8 +26,10 @@ ExportedObj/
 sysinfo.txt
 
 Builds/**
+
 #Presentations/Presentation_12.10.2016/**
 Media/**
+
 _SoulLust_UnityProject/*.csproj
 
 _SoulLust_UnityProject/obj/**
