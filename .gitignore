@@ -24,8 +24,6 @@ ExportedObj/
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
-#Presentations/Presentation_12.10.2016/**
-
 
 _SoulLust_UnityProject/*.csproj
 
@@ -36,4 +34,4 @@ _SoulLust_UnityProject/Library/**
 _SoulLust_UnityProject/.vscode
 _SoulLust_UnityProject/*.sln
 _SoulLust_UnityProject/*.htm
-Presentations/**
+
